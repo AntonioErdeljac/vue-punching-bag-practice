@@ -10,6 +10,14 @@
   </head>
 <body>
   <div id="vue-app">
+    <div id="bag" v-bind:class="{burst: hasFinished}"></div>
+    <div id="health" :style="{width: (100 - remainingHealth) + 'px'}">
+      <div></div>
+    </div>
+    <div id="controls">
+      <button :disabled="hasFinished" @click="punch">Punch</button>
+      <button @click="restart">Restart</button>
+    </div>
   </div>
   <script src="./app.js"></script>
 </body>
